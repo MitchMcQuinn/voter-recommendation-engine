@@ -74,10 +74,3 @@ To use your own data in the web interface:
 - `templates/index.html`: HTML template for the web interface.
 - `static/`: Directory for static files (CSS, JavaScript, etc.)
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
