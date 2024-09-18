@@ -56,7 +56,8 @@ The Voter Recommendation Engine takes input from multiple citizens' allocations 
 
 1. The script defines citizens' allocations and a voter's desired allocation.
 2. It uses CVXPY to set up and solve a convex optimization problem.
-3. The objective is to minimize the squared Euclidean distance between the adjusted allocation and the voter's desired allocation.
+3. The objective is to minimize the squared Euclidean distance between the adjusted allocation and the voter's desired allocation. 
+    *In simpler terms, objective is to find the best compromise between different citizen opinions to get as close as possible to the voter's preferences.
 4. Constraints ensure that weights are non-negative and sum to 1.
 5. The optimal weights and adjusted allocation are computed and displayed.
 
