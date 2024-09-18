@@ -8,7 +8,7 @@ In our case, we're using convex optimization to find the best way to combine dif
 
 ## Overview
 
-The Voter Recommendation Engine takes input from multiple citizens' allocations and a voter's desired allocation, then calculates an optimal weighted combination of the citizens' allocations to closely match the voter's preferences.
+The Voter Recommendation Engine takes input from multiple citizens' allocations and a voter's desired allocation, then calculates an optimal weighted combination of the citizens' allocations to closely match the voter's preferences. The project now includes a web interface for easy interaction with the engine.
 
 ## Features
 
@@ -16,34 +16,41 @@ The Voter Recommendation Engine takes input from multiple citizens' allocations 
 - Handles multiple projects and citizens
 - Provides optimal weights for each citizen's allocation
 - Displays the adjusted allocation alongside the voter's desired allocation
+- Web interface for inputting data and visualizing results
 
 ## Requirements
 
 - Python 3.x
 - NumPy
 - CVXPY
+- Flask
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/voter-recommendation-engine.git
+   cd voter-recommendation-engine
+   ```
+
+2. Install the required dependencies:
+   ```
+   pip install numpy cvxpy flask
+   ```
 
 ## Usage
 
-1. Ensure you have the required dependencies installed:
+1. Start the Flask server:
    ```
-   pip install numpy cvxpy
-   ```
-
-2. Run the script:
-   ```
-   python src/voter_allocation.py
+   python src/app.py
    ```
 
-3. The script will output:
-   - Optimal weights for each citizen
-   The script calculates and displays the optimal weight assigned to each citizen's allocation. These weights represent the proportion of influence each citizen's preferences have on the final adjusted allocation. The weights are non-negative and sum to 1, ensuring a valid combination of citizens' allocations.
+2. Open a web browser and navigate to `http://localhost:5001` (or the port specified in the console output).
 
-   - Adjusted allocation (as percentages)
-   Based on the optimal weights, the script computes an adjusted allocation that best matches the voter's desired allocation. This adjusted allocation is displayed as percentages for each project, making it easy to compare with the original allocations. It represents the recommended distribution of resources across projects that most closely aligns with the voter's preferences while considering the input from all citizens.
-
-   - Voter's desired allocation (as percentages)
-   The script shows the voter's initial desired allocation for each project as percentages. This serves as a reference point to compare against the adjusted allocation, allowing the voter to see how closely the recommendation matches their original preferences. It helps in understanding the trade-offs made by the optimization process to find a feasible solution that considers all citizens' inputs.
+3. Use the web interface to:
+   - Input citizens' allocations
+   - Enter the voter's desired allocation
+   - Compute and view the optimal weights and adjusted allocation
 
 ## How it Works
 
@@ -55,6 +62,22 @@ The Voter Recommendation Engine takes input from multiple citizens' allocations 
 
 ## Customization
 
-To use your own data:
-1. Modify the `C` array in the `main()` function to include your citizens' allocations.
-2. Update the `V` array with the voter's desired allocation.
+To use your own data in the web interface:
+1. Enter the citizens' allocations in the provided input fields.
+2. Enter the voter's desired allocation.
+3. Click the "Compute" button to see the results.
+
+## Project Structure
+
+- `src/voter_allocation.py`: Contains the core logic for computing optimal allocations.
+- `src/app.py`: Flask application serving the web interface.
+- `templates/index.html`: HTML template for the web interface.
+- `static/`: Directory for static files (CSS, JavaScript, etc.)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
